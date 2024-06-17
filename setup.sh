@@ -12,7 +12,7 @@ git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerl
 
 # Copy configuration files
 cp dotfiles/zshrc.conf ~/.zshrc
-cp dotfiles/p10zsh.conf ~/.p10k.zsh
+cp dotfiles/p10kzsh.conf ~/.p10k.zsh
 
 # Source the new Zsh configuration
 source ~/.zshrc
