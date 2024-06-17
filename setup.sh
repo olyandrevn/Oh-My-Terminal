@@ -11,8 +11,8 @@ sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/ins
 git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 
 # Copy configuration files
-cp zshrc.conf ~/.zshrc
-cp p10zsh.conf ~/.p10k.zsh
+cp dotfiles/zshrc.conf ~/.zshrc
+cp dotfiles/p10zsh.conf ~/.p10k.zsh
 
 # Source the new Zsh configuration
 source ~/.zshrc
