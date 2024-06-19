@@ -17,6 +17,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/p
 # Copy configuration files
 cp dotfiles/zshrc.conf ~/.zshrc
 cp dotfiles/p10kzsh.conf ~/.p10k.zsh
+cp dotfiles/vimrc.conf ~/.vimrc
+cp dotfiles/aliases.conf ~/.bash_aliases
 
 # Source the new Zsh configuration
 source ~/.zshrc
