@@ -1,8 +1,31 @@
 #!/bin/bash
 
+# Function to update system based on OS type
+update_system() {
+  if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    echo "Updating system for Linux..."
+    sudo apt update && sudo apt upgrade -y
+    echo "Installing Zsh on Linux..."
+    sudo apt install -y zsh
+  elif [[ "$OSTYPE" == "darwin"* ]]; then
+    echo "Installing brew system for macOS..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> ${HOME}/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    echo "Updating system for macOS..."
+    brew update && brew upgrade
+    echo "Installing Zsh on macOS..."
+    brew install zsh
+    brew install wget
+    brew install --cask font-meslo-lg-nerd-font
+  else
+    echo "Unsupported OS type: $OSTYPE"
+    exit 1
+  fi
+}
+
 # Update package list and install Zsh
-sudo apt update
-sudo apt install -y zsh
+update_system
 
 # Install Oh My Zsh
 sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
